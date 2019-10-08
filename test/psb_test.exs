@@ -18,7 +18,7 @@ defmodule PsbTest do
 
   Application.put_env(:psb, :processor, PsbTest.Processor)
 
-  describe "Publish and process" do
+  describe "PubSub" do
     test "publish and process" do
       message = %{message: "test"}
 
