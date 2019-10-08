@@ -1,0 +1,12 @@
+steps:
+
+- id: 'Test'
+  name: 'elixir:alpine'
+  entrypoint: 'ash'
+  args:
+    - '-c'
+    - |
+      mix local.hex --force   && \
+      mix local.rebar --force && \
+      mix deps.get            && \
+      mix test
