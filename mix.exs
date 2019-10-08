@@ -13,8 +13,8 @@ defmodule Psb.MixProject do
 
   def application do
     [
-      extra_applications: [:logger],
-      mod: {Psb.Application, []}
+      mod: {Psb.Application, []},
+      extra_applications: [:logger, :goth]
     ]
   end
 
