@@ -1,0 +1,33 @@
+{
+  "config/*.exs": {
+    "type": "config"
+  },
+
+  "lib/psb.ex": {
+    "type": "app",
+    "dispatch": "mix test test/psb_test.exs",
+    "alternate": "test/psb_test.exs"
+  },
+
+  "lib/psb/*.ex": {
+    "type": "app",
+    "dispatch": "mix test test/psb/{}_test.exs",
+    "alternate": "test/psb/{}_test.exs"
+  },
+
+  "test/psb_test.exs": {
+    "type": "tapp",
+    "dispatch": "mix test {file}",
+    "alternate": "lib/psb.ex"
+  },
+
+  "test/psb/*_test.exs": {
+    "type": "tapp",
+    "dispatch": "mix test {file}",
+    "alternate": "lib/psb/{}.ex"
+  },
+
+  "mix.exs": {
+    "type": "mix"
+  }
+}
