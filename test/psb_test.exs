@@ -3,8 +3,6 @@ defmodule PsbTest do
 
   alias GoogleApi.PubSub.V1.Model.PublishResponse
 
-  import ExUnit.CaptureLog
-
   defmodule PsbTest.Processor do
     @behaviour Psb.Processor
 
@@ -24,12 +22,8 @@ defmodule PsbTest do
 
       Application.put_env(:psb, :test_process, self())
 
-      fun = fn ->
-        assert {:ok, %PublishResponse{}} = Psb.publish(message)
-        assert_receive message, 10_000
-      end
-
-      assert capture_log(fun) =~ "Processing message"
+      assert {:ok, %PublishResponse{}} = Psb.publish(message)
+      assert_receive message, 10_000
     end
   end
 end

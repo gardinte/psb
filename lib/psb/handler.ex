@@ -27,8 +27,6 @@ defmodule Psb.Handler do
   end
 
   defp process_data(data) do
-    Logger.info("Processing message")
-
     data
     |> Jason.decode!()
     |> Processor.process!()
