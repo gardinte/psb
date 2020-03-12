@@ -5,7 +5,7 @@ defmodule Psb.MixProject do
     [
       app: :psb,
       version: "0.1.0",
-      elixir: "~> 1.9",
+      elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -20,8 +20,8 @@ defmodule Psb.MixProject do
 
   defp deps do
     [
-      {:broadway_cloud_pub_sub, ">= 0.4.0"},
-      {:goth, ">= 1.1.0"},
+      {:broadway_cloud_pub_sub, ">= 0.6.0"},
+      {:goth, ">= 1.2.0"},
       {:jason, ">= 1.1.0"}
     ]
   end

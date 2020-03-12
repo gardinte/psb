@@ -9,13 +9,11 @@ defmodule Psb.Handler do
   def start_link(_opts) do
     Broadway.start_link(__MODULE__,
       name: __MODULE__,
-      producers: [
-        default: [
-          module: {BroadwayCloudPubSub.Producer, subscription: subscription()}
-        ]
+      producer: [
+        module: {BroadwayCloudPubSub.Producer, subscription: subscription()}
       ],
       processors: [
-        default: [stages: 5]
+        default: [concurrency: 5]
       ]
     )
   end
