@@ -22,7 +22,7 @@ defmodule Psb.MixProject do
     [
       {:broadway_cloud_pub_sub, ">= 0.6.0"},
       {:goth, ">= 1.2.0"},
-      {:jason, ">= 1.1.0"}
+      {:jason, ">= 1.2.0"}
     ]
   end
 end
