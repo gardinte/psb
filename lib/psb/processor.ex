@@ -6,7 +6,7 @@ defmodule Psb.Processor do
 
     case implementation.process(data) do
       {:ok, data} -> data
-      {:error, error} -> raise ArgumentError, "parsing error: #{error}"
+      {:error, error} -> raise "error: #{error}"
     end
   end
 end
